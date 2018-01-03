@@ -26,7 +26,7 @@
   }{}%
   \@ifundefined{ifGPblacktext}{%
     \newif\ifGPblacktext
-    \GPblacktextfalse
+    \GPblacktexttrue
   }{}%
   % define a \g@addto@macro without @ in the name:
   \let\gplgaddtomacro\g@addto@macro
@@ -79,30 +79,30 @@
       \csname LTb\endcsname%
       \put(810,540){\makebox(0,0)[r]{\strut{} 0}}%
       \csname LTb\endcsname%
-      \put(810,828){\makebox(0,0)[r]{\strut{} 0.2}}%
+      \put(810,828){\makebox(0,0)[r]{\strut{} 20}}%
       \csname LTb\endcsname%
-      \put(810,1116){\makebox(0,0)[r]{\strut{} 0.4}}%
+      \put(810,1116){\makebox(0,0)[r]{\strut{} 40}}%
       \csname LTb\endcsname%
-      \put(810,1404){\makebox(0,0)[r]{\strut{} 0.6}}%
+      \put(810,1404){\makebox(0,0)[r]{\strut{} 60}}%
       \csname LTb\endcsname%
-      \put(810,1692){\makebox(0,0)[r]{\strut{} 0.8}}%
+      \put(810,1692){\makebox(0,0)[r]{\strut{} 80}}%
       \csname LTb\endcsname%
-      \put(810,1980){\makebox(0,0)[r]{\strut{} 1}}%
+      \put(810,1980){\makebox(0,0)[r]{\strut{} 100}}%
       \csname LTb\endcsname%
       \put(918,360){\makebox(0,0){\strut{} 0}}%
       \csname LTb\endcsname%
-      \put(1825,360){\makebox(0,0){\strut{} 0.2}}%
+      \put(1825,360){\makebox(0,0){\strut{} 20}}%
       \csname LTb\endcsname%
-      \put(2732,360){\makebox(0,0){\strut{} 0.4}}%
+      \put(2732,360){\makebox(0,0){\strut{} 40}}%
       \csname LTb\endcsname%
-      \put(3640,360){\makebox(0,0){\strut{} 0.6}}%
+      \put(3640,360){\makebox(0,0){\strut{} 60}}%
       \csname LTb\endcsname%
-      \put(4547,360){\makebox(0,0){\strut{} 0.8}}%
+      \put(4547,360){\makebox(0,0){\strut{} 80}}%
       \csname LTb\endcsname%
-      \put(5454,360){\makebox(0,0){\strut{} 1}}%
-      \put(180,1260){\rotatebox{90}{\makebox(0,0){\strut{}Precision}}}%
-      \put(3186,90){\makebox(0,0){\strut{}Recall}}%
-      \put(3186,2250){\makebox(0,0){\strut{}UND: Precision Recall}}%
+      \put(5454,360){\makebox(0,0){\strut{} 100}}%
+      \put(180,1260){\rotatebox{90}{\makebox(0,0){\strut{}Precision \%}}}%
+      \put(3186,90){\makebox(0,0){\strut{}Recall \%}}%
+      \put(3186,2250){\makebox(0,0){\strut{}\bf \normalsize UND: Precision Recall}}%
     }%
     \gplgaddtomacro\gplfronttext{%
       \csname LTb\endcsname%
@@ -111,7 +111,7 @@
       \put(2754,693){\makebox(0,0)[r]{\strut{}expression model}}%
     }%
     \gplbacktext
-    \put(0,0){\includegraphics{und_PR}}%
+    \put(0,0){\includegraphics{und_pr}}%
     \gplfronttext
   \end{picture}%
 \endgroup

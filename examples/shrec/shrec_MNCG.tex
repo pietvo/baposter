@@ -26,7 +26,7 @@
   }{}%
   \@ifundefined{ifGPblacktext}{%
     \newif\ifGPblacktext
-    \GPblacktextfalse
+    \GPblacktexttrue
   }{}%
   % define a \g@addto@macro without @ in the name:
   \let\gplgaddtomacro\g@addto@macro
@@ -77,44 +77,42 @@
   \begin{picture}(5760.00,2520.00)%
     \gplgaddtomacro\gplbacktext{%
       \csname LTb\endcsname%
-      \put(918,540){\makebox(0,0)[r]{\strut{} 0.7}}%
+      \put(810,540){\makebox(0,0)[r]{\strut{} 75}}%
       \csname LTb\endcsname%
-      \put(918,780){\makebox(0,0)[r]{\strut{} 0.75}}%
+      \put(810,828){\makebox(0,0)[r]{\strut{} 80}}%
       \csname LTb\endcsname%
-      \put(918,1020){\makebox(0,0)[r]{\strut{} 0.8}}%
+      \put(810,1116){\makebox(0,0)[r]{\strut{} 85}}%
       \csname LTb\endcsname%
-      \put(918,1260){\makebox(0,0)[r]{\strut{} 0.85}}%
+      \put(810,1404){\makebox(0,0)[r]{\strut{} 90}}%
       \csname LTb\endcsname%
-      \put(918,1500){\makebox(0,0)[r]{\strut{} 0.9}}%
+      \put(810,1692){\makebox(0,0)[r]{\strut{} 95}}%
       \csname LTb\endcsname%
-      \put(918,1740){\makebox(0,0)[r]{\strut{} 0.95}}%
+      \put(810,1980){\makebox(0,0)[r]{\strut{} 100}}%
       \csname LTb\endcsname%
-      \put(918,1980){\makebox(0,0)[r]{\strut{} 1}}%
+      \put(918,360){\makebox(0,0){\strut{} 0}}%
       \csname LTb\endcsname%
-      \put(1026,360){\makebox(0,0){\strut{} 0}}%
+      \put(1372,360){\makebox(0,0){\strut{} 2}}%
       \csname LTb\endcsname%
-      \put(1469,360){\makebox(0,0){\strut{} 2}}%
+      \put(1825,360){\makebox(0,0){\strut{} 4}}%
       \csname LTb\endcsname%
-      \put(1912,360){\makebox(0,0){\strut{} 4}}%
+      \put(2279,360){\makebox(0,0){\strut{} 6}}%
       \csname LTb\endcsname%
-      \put(2354,360){\makebox(0,0){\strut{} 6}}%
+      \put(2732,360){\makebox(0,0){\strut{} 8}}%
       \csname LTb\endcsname%
-      \put(2797,360){\makebox(0,0){\strut{} 8}}%
+      \put(3186,360){\makebox(0,0){\strut{} 10}}%
       \csname LTb\endcsname%
-      \put(3240,360){\makebox(0,0){\strut{} 10}}%
+      \put(3640,360){\makebox(0,0){\strut{} 12}}%
       \csname LTb\endcsname%
-      \put(3683,360){\makebox(0,0){\strut{} 12}}%
+      \put(4093,360){\makebox(0,0){\strut{} 14}}%
       \csname LTb\endcsname%
-      \put(4126,360){\makebox(0,0){\strut{} 14}}%
+      \put(4547,360){\makebox(0,0){\strut{} 16}}%
       \csname LTb\endcsname%
-      \put(4568,360){\makebox(0,0){\strut{} 16}}%
-      \csname LTb\endcsname%
-      \put(5011,360){\makebox(0,0){\strut{} 18}}%
+      \put(5000,360){\makebox(0,0){\strut{} 18}}%
       \csname LTb\endcsname%
       \put(5454,360){\makebox(0,0){\strut{} 20}}%
-      \put(180,1260){\rotatebox{90}{\makebox(0,0){\strut{}MNCG}}}%
-      \put(3240,90){\makebox(0,0){\strut{}$@x$}}%
-      \put(3240,2250){\makebox(0,0){\strut{}GavabDB: Mean Normalized Cumulative Gain}}%
+      \put(180,1260){\rotatebox{90}{\makebox(0,0){\strut{}MNCG \%}}}%
+      \put(3186,90){\makebox(0,0){\strut{}$@(x)$}}%
+      \put(3186,2250){\makebox(0,0){\strut{}\bf \normalsize GavabDB: Mean Normalized Cumulative Gain}}%
     }%
     \gplgaddtomacro\gplfronttext{%
       \csname LTb\endcsname%
@@ -123,7 +121,7 @@
       \put(4635,693){\makebox(0,0)[r]{\strut{}expression model}}%
     }%
     \gplbacktext
-    \put(0,0){\includegraphics{shrec_MNCG}}%
+    \put(0,0){\includegraphics{shrec_mncg}}%
     \gplfronttext
   \end{picture}%
 \endgroup
