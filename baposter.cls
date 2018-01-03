@@ -164,7 +164,7 @@
 %\RequirePackage[l2tabu, orthodox]{nag}
 \usetikzlibrary{decorations}
 \usetikzlibrary{fadings}
-\usetikzlibrary{decorations.pathmorphing} % replacing snakes AM 1/3/18
+\usetikzlibrary{decorations.pathmorphing,decorations.shapes} % replacing snakes AM 1/3/18
 \usetikzlibrary{calc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -623,10 +623,10 @@
   \draw[color=#1] \baposterBoxGetShape;%
 }
 \newcommand{\baposter@box@drawborder@coils}[1]{
-  \draw[color=#1,decorate,decoration={segment amplitude=0.35em,segment length=0.4em,coil}] \baposterBoxGetShape;% Changed to decorate AM 1/3/18
+  \draw[color=#1,decorate,decoration={coil,amplitude=0.35em,segment length=0.4em,}] \baposterBoxGetShape;% Changed to decorate AM 1/3/18
 }
 \newcommand{\baposter@box@drawborder@triangles}[1]{
-  \draw[color=#1,decorate,decoration={segment amplitude=0.2em,segment length=0.4em,triangles}] \baposterBoxGetShape;% Changed to decorate AM 1/3/18
+  \draw[color=#1,decorate,decoration={triangles,segment length=0.4em,shape height=.4em,shape width=.2em}] \baposterBoxGetShape;% Changed to decorate AM 1/3/18
 }
 \newcommand{\baposter@box@drawborder@rectangle}[1]{
   \draw[color=#1] \baposterBoxGetShape;%
