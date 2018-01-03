@@ -11,6 +11,10 @@
 %% Copyright (C) 2007-2011 Brian Amberg
 %% Copyright (C) 2011      Reinhold Kainhofer <reinhold@kainhofer.com>
 %%
+%% 25. January 2018:
+%%	   - Cloned from GitHub to try to keep maintained.
+%%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
+%%     - Removed font loading commands to support multiple engines better
 %% 24. October 2011: 
 %%     - The grid was broken when not explicitly specifying the column number, this has been fixed now.
 %%     - The perennial text border faded was still broken, it just faded to the other text border color, not to transparent. Now also fixed
@@ -156,11 +160,11 @@
 \RequirePackage{tikz}
 \RequirePackage{pgf}
 \RequirePackage{ifthen}
-\RequirePackage[T1]{fontenc}
+%\RequirePackage[T1]{fontenc} 
 %\RequirePackage[l2tabu, orthodox]{nag}
 \usetikzlibrary{decorations}
 \usetikzlibrary{fadings}
-\usetikzlibrary{snakes}
+\usetikzlibrary{decorations.pathmorphing} % replacing snakes AM 1/3/18
 \usetikzlibrary{calc}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -619,10 +623,10 @@
   \draw[color=#1] \baposterBoxGetShape;%
 }
 \newcommand{\baposter@box@drawborder@coils}[1]{
-  \draw[color=#1,segment amplitude=0.35em,segment length=0.4em,snake=coil] \baposterBoxGetShape;%
+  \draw[color=#1,decorate,decoration={segment amplitude=0.35em,segment length=0.4em,coil}] \baposterBoxGetShape;% Changed to decorate AM 1/3/18
 }
 \newcommand{\baposter@box@drawborder@triangles}[1]{
-  \draw[color=#1,segment amplitude=0.2em,segment length=0.4em,snake=triangles] \baposterBoxGetShape;%
+  \draw[color=#1,decorate,decoration={segment amplitude=0.2em,segment length=0.4em,triangles}] \baposterBoxGetShape;% Changed to decorate AM 1/3/18
 }
 \newcommand{\baposter@box@drawborder@rectangle}[1]{
   \draw[color=#1] \baposterBoxGetShape;%
