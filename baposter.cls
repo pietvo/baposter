@@ -10,11 +10,19 @@
 %%
 %% Copyright (C) 2007-2011 Brian Amberg
 %% Copyright (C) 2011      Reinhold Kainhofer <reinhold@kainhofer.com>
+%% Contributions by Mathias Loesch, 2012, see https://github.com/mloesch/baposter
+%% Contributions by Alan Munn, 2018, see https://github.com/amunn/baposter
 %%
-%% 25. January 2018:
+%%
+%% 24. February 2022: (Pieter van Oostrum)
+%%     - Added attributions to Mathias Loesch to comply with GPL
+%% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
 %%     - Removed font loading commands to support multiple engines better
+%% 23. February 2012: (Mathias Loesch)
+%%     - Added the boxopacity option to the posterbox environment
+%%     - Annotated with ML 2012/02/23
 %% 24. October 2011: 
 %%     - The grid was broken when not explicitly specifying the column number, this has been fixed now.
 %%     - The perennial text border faded was still broken, it just faded to the other text border color, not to transparent. Now also fixed
@@ -458,7 +466,7 @@
 \define@cmdkey[ba]{posterbox}[baposter@box@]{boxColorTwo}           [cyan]        {}
 \define@cmdkey[ba]{posterbox}[baposter@box@]{headerfont}            [\scshape\Large]   {}
 \define@cmdkey[ba]{posterbox}[baposter@box@]{textfont}              [{}]          {}
-\define@cmdkey[ba]{posterbox}[baposter@box@]{boxopacity}            [1.0]   {}
+\define@cmdkey[ba]{posterbox}[baposter@box@]{boxopacity}            [1.0]   {} % ML 2012/02/23
 
 \define@cmdkey[ba]{posterbox}[baposter@box@]{linewidth}             [2pt]         {}
 
@@ -516,7 +524,7 @@
   headershade=shadeLR,
   headerborder=none,
   boxheaderheight=2em,
-  boxopacity=1.0
+  boxopacity=1.0 % ML 2012/02/23
 }{}
 
 
@@ -600,6 +608,7 @@
 }
 \newcommand{\baposter@box@drawbackground@plain}[2]{
   \tikzstyle{box colors}=[fill=#1]
+  % ML 2012/02/23 added boxopacity
   \fill[box colors, opacity=\baposter@box@boxopacity] \baposterBoxGetShape;
 }
 \newcommand{\baposter@box@drawbackground@shadelr}[2]{
@@ -1007,6 +1016,7 @@
       \ifcase\baposter@box@headerbordernr\relax%
         % open
         \ifthenelse{\equal{\baposter@box@headershade}{plain}}{
+          % ML 2012/02/23 added boxopacity
           \filldraw  [style=header colors, opacity=\baposter@box@boxopacity] \baposterHeaderGetShape;%
         }{
           \shadedraw [style=header colors] \baposterHeaderGetShape;%
@@ -1014,6 +1024,7 @@
       \or
         % closed
         \ifthenelse{\equal{\baposter@box@headershade}{plain}}{
+          % ML 2012/02/23 added boxopacity
           \filldraw  [style=header colors, opacity=\baposter@box@boxopacity] \baposterHeaderGetShape -- cycle;%
         }{
           \shadedraw [style=header colors] \baposterHeaderGetShape -- cycle;%
@@ -1021,6 +1032,7 @@
       \or
         % none
         \ifthenelse{\equal{\baposter@box@headershade}{plain}}{
+          % ML 2012/02/23 added boxopacity
           \fill      [style=header colors, opacity=\baposter@box@boxopacity] \baposterHeaderGetShape;%
         }{
           \shade     [style=header colors] \baposterHeaderGetShape;%
