@@ -20,6 +20,7 @@
 %%     - Contributions by Pieter van Oostrum (marked PvO)
 %%     - Updated comments
 %%     - Replace \usepackage with \RequirePackage
+%%     - Remove spurious semicolons
 %%     - remove unused commands \baposterHeaderDrawBackground and \baposterHeaderDrawBorder
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
@@ -1004,8 +1005,10 @@
       %% Setting the bg colors of the box header
       \baposterHeaderSetShade{headerColorOne}{headerColorTwo}{borderColor}
 %
-      \tikzstyle{rc}=[rounded corners=\baposter@box@@cornerradius];%
-      \tikzstyle{src}=[rounded corners=0.5em];%
+      % - PvO 2022/02/24
+      % Removed two spurious semicolons at the end of the next two lines
+      \tikzstyle{rc}=[rounded corners=\baposter@box@@cornerradius]%
+      \tikzstyle{src}=[rounded corners=0.5em]%
 %
 
     %% Now that everything is set up, draw the actual box, with bg and header
@@ -1046,8 +1049,10 @@
       \fi
       %
       %% Draw the text inside the box header:
-      \baposterHeaderDrawText{\color{headerFontColor}\baposter@box@headerfont{\baposter@box@title}};%
-    }
+      % - PvO 2022/02/24
+      % Removed a spurious semicolon at the end of the next line
+      \baposterHeaderDrawText{\color{headerFontColor}\baposter@box@headerfont{\baposter@box@title}}%
+    }%
       %
       %% Text borders (border around boxes)
       \debug{Poster boxes}%
