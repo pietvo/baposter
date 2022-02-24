@@ -752,6 +752,8 @@
     ]%
 }
 \newcommand{\baposter@box@headershade@shadetbinverse}[3]{
+    % PvO 2022-02-24
+    \debug{Header-Shade: Shade Top - Bottom - Inverse }%
     \tikzstyle{header colors}=[%
       top color=#1!75!#2,%
       bottom color=#2!100!#1,%
