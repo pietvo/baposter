@@ -26,6 +26,7 @@
 %%     - Set sensible \baselineskip in title and authors
 %%     - Use lower case in option definitions
 %%     - Added a lot of % signs to prevent possible spurious spaces
+%%     - Added roundedright to valid textborder values
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -394,7 +395,7 @@
 
 % textborder can be one of: none, bars, coils, triangles, rectangle, rounded,
 % roundedleft, roundedright, roundedsmall, faded;
-\edef\baposter@box@textborder@validvalues{none,bars,coils,triangles,rectangle,rounded,roundedleft,roundedsmall,faded}
+\edef\baposter@box@textborder@validvalues{none,bars,coils,triangles,rectangle,rounded,roundedleft,roundedright,roundedsmall,faded}
 \define@choicekey*+[ba]{posterbox}{textborder}%
     [\baposter@box@textborder\baposter@box@textbordernr]%
     {none,bars,coils,triangles,rectangle,rounded,roundedleft,roundedright,roundedsmall,faded} [rectangle] {%
