@@ -22,6 +22,7 @@
 %%     - Replace \usepackage with \RequirePackage
 %%     - Remove spurious semicolons
 %%     - remove unused commands \baposterHeaderDrawBackground and \baposterHeaderDrawBorder
+%%     - Moved calculation of eye catcher and logo boxes outside of tikz
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -1075,26 +1076,29 @@
   \baposterPosterDrawBackground{bgColorOne}{bgColorTwo}%
   %% Poster header/title
   \hspace{-1.5em}%
-  \begin{tikzpicture}[inner sep=0pt,outer sep=0pt,line width=0.05em]%
+  % PvO 2022/02/24
+  % Moved calculation of eye catcher and logo boxes outside of tikz
+  \ifbaposter@eyecatcher% Has eye catcher
+    \debug{Eyecatcher found!}%
+    \setbox\baposter@titleimage@left=\hbox{#2}%
+  \else% Has no eye catcher%
+    \setbox\baposter@titleimage@left=\hbox{}%
+  \fi%
+  \setlength{\baposter@titleimage@left@width}{\wd\baposter@titleimage@left}%
+  \setbox\baposter@titleimage@right=\hbox{#5}%
+  \setlength{\baposter@titleimage@right@width}{\wd\baposter@titleimage@right}%
+  \setlength{\baposter@titleimage@textwidth}{\textwidth}%
+  \addtolength{\baposter@titleimage@textwidth}{-\baposter@titleimage@left@width}%
+  \addtolength{\baposter@titleimage@textwidth}{-\baposter@titleimage@right@width}%
+%
+  \begin{tikzpicture}[inner sep=0pt,outer sep=0pt,line width=0.05em,align=right]%
     \useasboundingbox (0em,0em) rectangle(\textwidth,\textheight);%
     \path[shape=coordinate]%
       (0pt,\colheight) coordinate(north west) (\textwidth,\colheight) coordinate(north east)%
       (0pt,0pt) coordinate(south west)        (\textwidth,0pt) coordinate(south east);%
-%
-    \ifbaposter@eyecatcher% Has eye catcher
-      \debug{Eyecatcher found!}
-      \setbox\baposter@titleimage@left=\hbox{#2}%
-    \else% Has no eye catcher%
-      \setbox\baposter@titleimage@left=\hbox{}%
-    \fi%
-    \setlength{\baposter@titleimage@left@width}{\wd\baposter@titleimage@left}%
-    \setbox\baposter@titleimage@right=\hbox{#5}%
-    \setlength{\baposter@titleimage@right@width}{\wd\baposter@titleimage@right}%
-    \setlength{\baposter@titleimage@textwidth}{\textwidth}%
-    \addtolength{\baposter@titleimage@textwidth}{-\baposter@titleimage@left@width}%
-    \addtolength{\baposter@titleimage@textwidth}{-\baposter@titleimage@right@width}%
-
-    \debug{#3}
+    % PvO 2022/02/24
+    % Moved calculation of eye catcher and logo boxes outside of tikz
+    \debug{#3}%
     %
     %
     %      % Draw Header%
