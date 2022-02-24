@@ -24,6 +24,7 @@
 %%     - remove unused commands \baposterHeaderDrawBackground and \baposterHeaderDrawBorder
 %%     - Moved calculation of eye catcher and logo boxes outside of tikz
 %%     - Set sensible \baselineskip in title and authors
+%%     - Use lower case in option definitions
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -370,13 +371,13 @@
 % background can be one of: shadelr, shadetb, plain, user, none
 \define@choicekey*+[ba]{poster}{background}%
     [\baposter@background\baposter@backgroundnr]%
-    {shadeLR, shadeTB, plain, user, none} [plain] {%
+    {shadelr, shadetb, plain, user, none} [plain] {%
   \debug{Poster background: \baposter@background}
   \renewcommand{\baposterPosterDrawBackground}[2]{
       \csname baposter@background@\baposter@background\endcsname{##1}{##2}}
 }{
   \PackageWarning{baposter}{Unknown background `\baposter@background' (use
-      shadeLR, shadeTB, plain, none, or user). If user is used, you also
+      shadelr, shadetb, plain, none, or user). If user is used, you also
       have to define \background{...}.}
   \renewcommand{\baposterPosterDrawBackground}[2]{\baposter@background@none{##1}{##2}}
 }
@@ -530,7 +531,7 @@
   headerColorOne=red,
   headerColorTwo=brown,
   headershape=rectangle,
-  headershade=shadeLR,
+  headershade=shadelr,
   headerborder=none,
   boxheaderheight=2em,
   boxopacity=1.0 % ML 2012/02/23
