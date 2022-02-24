@@ -5,8 +5,8 @@
 %% layout. It comes with a number of combinable styles and is (maybe only for
 %% the writer) easy to extend, as all the graphics is based on pgf.
 %%
-%% It is meant to be used with pdftex, but might also work with pslatex if you
-%% are not interested in things like transparency.
+%% It is meant to be used with pdflatex, it probably also work with lualatex.
+%% With xelatex and latex -> dvips some things might not work.
 %%
 %% Copyright (C) 2007-2011 Brian Amberg
 %% Copyright (C) 2011      Reinhold Kainhofer <reinhold@kainhofer.com>
@@ -18,6 +18,7 @@
 %% 24. February 2022: (Pieter van Oostrum)
 %%     - Added attributions to Mathias Loesch to comply with GPL
 %%     - Contributions by Pieter van Oostrum (marked PvO)
+%%     - Updated comments
 %%     - Replace \usepackage with \RequirePackage
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
@@ -105,9 +106,9 @@
 %% 01. June 2007
 %%     - First version released.
 %%
-%% Use this class with pdflatex
 %%
 %% I have confirmed that this package works with
+%%   - texlive 2021 
 %%   - texlive 2007 and
 %%   - miktex 2.7
 %%
