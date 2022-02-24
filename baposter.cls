@@ -18,6 +18,7 @@
 %% 24. February 2022: (Pieter van Oostrum)
 %%     - Added attributions to Mathias Loesch to comply with GPL
 %%     - Contributions by Pieter van Oostrum (marked PvO)
+%%     - Replace \usepackage with \RequirePackage
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -290,7 +291,7 @@
 \typeout{Paperheight=\the\baposter@finalpaperheight}
 \typeout{BasePaperwidth=\the\baposter@basepaperwidth}
 \typeout{BasePaperheight=\the\baposter@basepaperheight}
-\usepackage[
+\RequirePackage[ % PvO
    paperwidth=\baposter@basepaperwidth,
    paperheight=\baposter@basepaperheight,
    tmargin=\baposter@basemargin,
@@ -299,7 +300,7 @@
    rmargin=\baposter@basemarginright,
    ]{geometry} 
 
-\usepackage{pgfpages}
+\RequirePackage{pgfpages} % PvO
 \if@landscape
 \if@geometryKnowsThisSize
 \pgfpagesuselayout{resize to}[physical paper width=\baposter@finalpaperheight,physical paper height=\baposter@finalpaperwidth]
