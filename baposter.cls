@@ -12,10 +12,12 @@
 %% Copyright (C) 2011      Reinhold Kainhofer <reinhold@kainhofer.com>
 %% Contributions by Mathias Loesch, 2012, see https://github.com/mloesch/baposter
 %% Contributions by Alan Munn, 2018, see https://github.com/amunn/baposter
+%% Copyright (C) 2022, by Pieter van Oostrum
 %%
 %%
 %% 24. February 2022: (Pieter van Oostrum)
 %%     - Added attributions to Mathias Loesch to comply with GPL
+%%     - Contributions by Pieter van Oostrum (marked PvO)
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -123,11 +125,12 @@
 %%
 %%
 %% Licence: GPL
-\ProvidesClass{baposter}[2011/11/26 v2.0 baposter class]
+\ProvidesClass{baposter}[2022/02/24 v3.0 baposter class]
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \LoadClass{article}
 \typeout{baposter: Brian Amberg, 2007, 2008, 2009, 2010, 2011 | http://www.brian-amberg.de/uni/poster/}
 \typeout{baposter: Reinhold Kainhofer, 2011 | http://reinhold.kainhofer.com/}
+\typeout{baposter: Pieter van Oostrum, 2022 | https://github.com/pietvo/baposter}
 
 %% Define lengths only once on inclusion, such that we can make multiple posters
 \newlength{\baposter@basepaperwidth}
