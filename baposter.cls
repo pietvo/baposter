@@ -23,6 +23,7 @@
 %%     - Remove spurious semicolons
 %%     - remove unused commands \baposterHeaderDrawBackground and \baposterHeaderDrawBorder
 %%     - Moved calculation of eye catcher and logo boxes outside of tikz
+%%     - Set sensible \baselineskip in title and authors
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -769,8 +770,12 @@
     \tikzstyle{header colors}=[]
 }
 
-
-
+% PvO 2022/02/24
+% Typeset poster title - We smuggle in a \par with \endgraf, otherwise
+% TeX complains because \text@command is not \long
+% We need this to effectuate the \baselineskip setting
+\newcommand{\baposter@setpostertitle}[1]{\textbf{\Huge\baselineskip=2.2ex #1\endgraf}}
+\newcommand{\baposter@setposterauthor}[1]{{\Large\baselineskip=2.2ex #1\endgraf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The main poster environment
@@ -1108,14 +1113,20 @@
     \ifbaposter@eyecatcher% Has eye catcher%
       \draw (image.east) node(title)[anchor=west,text width=\baposter@titleimage@textwidth]{%
         \begin{minipage}{\baposter@titleimage@textwidth}%
-          \begin{center}%
-          \textbf{\Huge #3}\\%
-          {\Large #4}%
-          \end{center}%
-        \end{minipage}
+          % PvO 2022/02/24 Set sensible \baselineskip in title and authors
+          \centering
+            \baposter@setpostertitle{#3}% PvO
+            \baposter@setposterauthor{#4}% PvO
+        \end{minipage}%
       };%
     \else% Has no eye catcher
-      \draw (image.east) node(title)[anchor=west]  { {\begin{minipage}{\baposter@titleimage@textwidth}{\bfseries\Huge #3}\\{\Large #4}\end{minipage}} };%
+      \draw (image.east) node(title)[anchor=west]  {{%
+          \begin{minipage}{\baposter@titleimage@textwidth}%
+          % PvO 2022/02/23 Set sensible \baselineskip in title and authors
+            \baposter@setpostertitle{#3}% PvO
+            \baposter@setposterauthor{#4}% PvO
+          \end{minipage}%
+        }};%
     \fi
   }% END poster begin
 % The body
