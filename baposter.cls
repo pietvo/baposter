@@ -20,6 +20,7 @@
 %%     - Contributions by Pieter van Oostrum (marked PvO)
 %%     - Updated comments
 %%     - Replace \usepackage with \RequirePackage
+%%     - remove unused commands \baposterHeaderDrawBackground and \baposterHeaderDrawBorder
 %% 03. January 2018: (Alan Munn) annotated with AM 1/3/18
 %%	   - Cloned from GitHub to try to keep maintained.
 %%	   - Fixed problem with outdated snakes library (https://tex.stackexchange.com/q/408661/2693)
@@ -330,8 +331,8 @@
 
 \newcommand{\baposterHeaderGetShape}{}          % Returns path of text box shape
 \newcommand{\baposterHeaderSetShade}[3]{}       % Set bg style for box headers
-\newcommand{\baposterHeaderDrawBackground}[3]{} % Draw background of box header
-\newcommand{\baposterHeaderDrawBorder}[1]{}     % Draw border of box header
+%\newcommand{\baposterHeaderDrawBackground}[2]{} % Draw background of box header
+%\newcommand{\baposterHeaderDrawBorder}[1]{}     % Draw border of box header
 \newcommand{\baposterHeaderDrawText}[1]{}       % Draw text inside box header
 
 \newcommand{\@@previousbox}{notset}             % stores the previously processed box for below=auto
@@ -439,14 +440,14 @@
       \csname baposter@box@headershape@\baposter@box@headershape\endcsname}
   \renewcommand{\baposterHeaderDrawText}[1]{
       \csname baposter@box@headerdrawtext@\baposter@box@headershape\endcsname{##1}}
-  \renewcommand{\baposterHeaderDrawBorder}[1]{
-      \csname baposter@box@headerdrawborder@\baposter@box@headershape\endcsname{##1}}
+  % \renewcommand{\baposterHeaderDrawBorder}[1]{
+  %     \csname baposter@box@headerdrawborder@\baposter@box@headershape\endcsname{##1}}
 }{
   \PackageWarning{baposter}{Unknown headershape style `\baposter@headershape'.
       Edit your file to choose a valid option.}
   \renewcommand{\baposterHeaderGetShape}{\baposter@box@headershape@rectangle}
   \renewcommand{\baposterHeaderDrawText}[1]{\baposter@box@headerdrawtext@rectangle{##1}}
-  \renewcommand{\baposterHeaderDrawBorder}[1]{\baposter@box@headerdrawborder@rectangle{##1}}
+%  \renewcommand{\baposterHeaderDrawBorder}[1]{\baposter@box@headerdrawborder@rectangle{##1}}
 }
 
 % headerborder can be one of: open, closed, none
@@ -1014,8 +1015,8 @@
       \debug{Header-Shape: \baposter@box@headershape, header-border: \baposter@box@headerborder (\baposter@box@headerbordernr)}%
       % TODO: Also turn this last ifcase construct into a handler function
       %       We only need to determine (fill|shade)(draw|)...
-%       \baposterHeaderDrawBackground{bgColorOne}{bgColorTwo}{borderColor}
-%       \baposterHeaderDrawBorder{borderColor}
+%       \baposterHeaderDrawBackground{bgColorOne}{bgColorTwo}%{borderColor}
+%       \baposterHeaderDrawBorder%{borderColor}
     \ifthenelse{\equal{\baposter@box@title}{}}{% No header
     }{% With header
       \ifcase\baposter@box@headerbordernr\relax%
