@@ -367,7 +367,7 @@
 \define@cmdkey [ba]{poster}[baposter@]{bgColorOne}           [baposter@silver]{}
 \define@cmdkey [ba]{poster}[baposter@]{bgColorTwo}           [green]       {}
 
-% background can be one of: shadeLR, shadeTB, plain, user, none
+% background can be one of: shadelr, shadetb, plain, user, none
 \define@choicekey*+[ba]{poster}{background}%
     [\baposter@background\baposter@backgroundnr]%
     {shadeLR, shadeTB, plain, user, none} [plain] {%
@@ -391,7 +391,7 @@
 
 
 % textborder can be one of: none, bars, coils, triangles, rectangle, rounded,
-% roundedleft, roundedsmall, faded; UNIMPLEMENTED: roundedright
+% roundedleft, roundedright, roundedsmall, faded;
 \edef\baposter@box@textborder@validvalues{none,bars,coils,triangles,rectangle,rounded,roundedleft,roundedsmall,faded}
 \define@choicekey*+[ba]{posterbox}{textborder}%
     [\baposter@box@textborder\baposter@box@textbordernr]%
@@ -408,7 +408,7 @@
   \renewcommand{\baposterBoxDrawBorder}[1]{\baposter@drawborder@rectangle{##1}}
 }
 
-% boxshade can be one of: shadeLR, shadeTB, plain, none
+% boxshade can be one of: shadelr, shadetb, plain, none
 \define@choicekey*+[ba]{posterbox}{boxshade}%
     [\baposter@box@boxshade\baposter@box@boxshadenr]%
     {shadelr,shadetb,plain,none} [none] {%
@@ -421,7 +421,7 @@
   \renewcommand{\baposterBoxDrawBackground}[2]{\baposter@box@drawbackground@none{##1}{##2}}
 }
 
-% headershade can be one of: shade-lr, shade-tb, shade-tb-inverse, plain
+% headershade can be one of: shadelr, shadetb, shadetbinverse, plain
 \define@choicekey*+[ba]{posterbox}{headershade}%
     [\baposter@box@headershade\baposter@box@headershadenr]%
     {shadelr,shadetb,shadetbinverse,plain} [shadelr] {%
@@ -635,7 +635,7 @@
 %%% Draw box border
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% These functions take two arguments: borderColor
+% These functions take one argument: borderColor
 \newcommand{\baposter@box@drawborder@none}[1]{}
 \newcommand{\baposter@box@drawborder@bars}[1]{
   \draw[color=#1] \baposterBoxGetShape;%
@@ -731,7 +731,7 @@
 %%% Header shade options and functions (one function for each possible value)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% These functions take two arguments: headerColorOne, headerColorTwo and borderColor
+% These functions take three arguments: headerColorOne, headerColorTwo and borderColor
 \newcommand{\baposter@box@headershade@shadelr}[3]{
     \debug{Header-Shade: Shade Left - Right}
     \tikzstyle{header colors}=[%
@@ -779,7 +779,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The main poster environment
-%%% \begin{baposter}{settings}{Eye Catcher}{Title}{Author}{University Logo}
+%%% \begin{poster}{settings}{Eye Catcher}{Title}{Author}{University Logo}
 %%%-----------------------------------------------------------------------------
 %%% The settings are
 %%%   - grid=true,[false]:Show grid to help with alignment
@@ -917,7 +917,7 @@
         \begin{minipage}[t]{\boxwidth-\baposter@box@@boxpadding*2}%
           \baposter@box@textfont\bgroup%
   }% End of posterbox preamble
-  %%% HERE COME THE ACTUAL CONTENTS OF THE HEADERBOX ENVIRONMENT
+  %%% HERE COME THE ACTUAL CONTENTS OF THE POSTERBOX ENVIRONMENT
   {% posterbox handling after contents (i.e. drawing everything)
           \egroup%
         \end{minipage}%
