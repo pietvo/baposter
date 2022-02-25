@@ -72,11 +72,17 @@
 	textborder=rectangle,
 	background=user,
 	headerborder=open,
-  boxshade=plain
+    boxshade=plain
 }
-%%% Eye Cacther %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Eye Catcher %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note: in previous versions of baposter.cls you could leave the
+% text here, but nothing was produced in the document. This was a
+% bug: the text was typeset with nullfont, which produces no output
+% but gives a lot of warnings in the log file. Here the Eye Catcher
+% is left empty, but the 'eyecatcher' option is true. This causes
+% the title to be typeset centered.
 {
-	Eye Catcher, empty if option eyecatcher=false - unused
+	% Eye Catcher, empty if option eyecatcher=false - unused
 }
 %%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\sf\bf
