@@ -33,7 +33,7 @@ The main environment for the poster is the \texttt{poster} environment. It has t
   key=value options
   }
   {
-    Eye Catcher, empty if option eyecatcher=no
+    Eye Catcher, empty if option eyecatcher=false
   }
   {
     Poster Title
@@ -88,7 +88,7 @@ with well presented and concise content.
 
 The available options are:
 \begin{description}
-  \item[grid=\{yes,no\}]                Display a grid, which can be useful during the layout phase.
+  \item[grid=\{true,false\}]                Display a grid, which can be useful during the layout phase.
   \item[columns=4] Number of columns (default 4 in landscape and 3 in portrait format) (maximum number is 6)
   \item[colspacing=length]              Distance between the columns of the poster
   \item[headerheight=length]            Height of the main poster header as a length (not of the headers of the text boxes). Default value is \verb+0.1\textheight+.
@@ -111,7 +111,7 @@ The available options are:
 
   \item[bgColorOne=pgf color name]      First background color. For a plain, this color will be used. For a shaded background, this is the first color for the gradient.
   \item[bgColorTwo=pgf color name]      Second background color. This color will only be used for shaded backgrounds as the end color of the gradient.
-  \item[eyecatcher=\{yes,no\}]           Should an eye catcher be shown on the
+  \item[eyecatcher=\{true,false\}]           Should an eye catcher be shown on the
                                          left of the title page. The eyecatcher itself is defined in the second
                                          argument of the poster environment.
 
@@ -173,7 +173,7 @@ The available options are:
 \section{Author and Licence}
 The original author is Brian Amberg, and the class and documentation has been
 greatly improved by Reinhold Kainhofer. The class is distributed under the GPL.
-The current version and documentation can be found at:
+The original version and documentation can be found at:
 \begin{center}
 \url{http://www.brian-amberg.de/uni/poster/}
 \end{center}
