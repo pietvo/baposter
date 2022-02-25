@@ -162,7 +162,7 @@
       \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=lightblue,line width=0.03em] (0,0) circle(0.18em);}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Problem}{name=problem,column=0,row=0}{
+  \begin{posterbox}[name=problem,column=0,row=0]{Problem}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    Special effects in movies require tracks of features through scenes. Tracks are found in
    an interactive process. The artist marks a position, and the computer
@@ -175,10 +175,10 @@
       \item Speed: Interactive editing requires faster than framerate calculation
    \end{enumerate}
    \vspace{0.3em}
- }
+ \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Contributions}{name=contribution,column=1,row=0,bottomaligned=problem}{
+  \begin{posterbox}[name=contribution,column=1,row=0,bottomaligned=problem]{Contributions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    We formulated tracking as path search in a large graph, and solve it
    efficiently with a modificiation of Dijkstra's algorithm.  
@@ -192,10 +192,10 @@
    resolution video
    \end{enumerate}
    \vspace{0.3em}
-  }
+  \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Results}{name=results,column=2,span=2,row=0}{
+\begin{posterbox}[name=results,column=2,span=2,row=0]{Results}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \drawvideo{5}{40}{%
       \includegraphics[width=0.2\linewidth]{red-4-sec_000_rastered}%
@@ -231,9 +231,9 @@
       marked occlusions. 
       \end{multicols}
       \vspace{-0.6em}
-}
+\end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{References}{name=references,column=0,above=bottom}{
+  \begin{posterbox}[name=references,column=0,above=bottom]{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \smaller
     \bibliographystyle{ieee}
@@ -250,9 +250,9 @@
         \newblock In {\em CVPR '06}
       \end{thebibliography}
    \vspace{0.3em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{A Future Direction}{name=questions,column=1,span=2,aligned=references,above=bottom}{
+  \begin{posterbox}[name=questions,column=1,span=2,aligned=references,above=bottom]{A Future Direction}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{multicols}{2}
     We incorporated a background model, where a click informs us not only that `this is how the
@@ -264,16 +264,16 @@
     explained by tracking another point'.
   \end{multicols}
    \vspace{0.3em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Source Code}{name=references,column=3,aligned=references,above=bottom}{
+  \begin{posterbox}[name=references,column=3,aligned=references,above=bottom]{Source Code}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   The source code and compiled executables with an interactive interface are available at \\
   \url{http://www.cs.unibas.ch/personen/amberg_brian/graphtrack}
    \vspace{0.3em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Speed}{name=speed,column=2,span=2,row=0,below=results,above=references}{
+\begin{posterbox}[name=speed,column=2,span=2,row=0,below=results,above=references]{Speed}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{multicols}{2}
 \newcommand{\basiswidth}{0.22}
@@ -330,9 +330,9 @@ later. A single preprocessed video can therefore be used in many annotation
 sessions.
 \end{multicols}
    \vspace{0.0em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Method}{name=method,column=0,below=problem,bottomaligned=speed}{
+  \begin{posterbox}[name=method,column=0,below=problem,bottomaligned=speed]{Method}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/graph_occluded.pdf}\\}
   \indent The cost is interpreted as a directed acyclic graph
@@ -344,9 +344,9 @@ sessions.
   search. The search was speed up by lower bounding the cost, and lazily
   evaluating the accurate cost only where necessary to find the global optimum.
    \vspace{0.3em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Background Model}{name=background model,column=1,below=problem,bottomaligned=speed}{
+  \begin{posterbox}[name=background model,column=1,below=problem,bottomaligned=speed]{Background Model}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \noindent\begin{tabular}{r@{\hspace{0.3em}}c@{\hspace{1.5em}}c@{}}
 & With & Without\\
@@ -368,7 +368,7 @@ sessions.
   the entire path is still necessary, as the correct patch is not the most
   probable patch in this frame.
    \vspace{0.3em}
-  }
+  \end{posterbox}
 
 \end{poster}
 

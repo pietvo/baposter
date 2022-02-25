@@ -130,7 +130,7 @@
   linewidth=2pt
   }
   % Eye Catcher
-  {\includegraphics[width=10em]{D1077}} % No eye catcher for this poster. (eyecatcher=no above). If an eye catcher is present, the title is centered between eye-catcher and logo.
+  {\includegraphics[width=10em]{D1077}} % No eye catcher for this poster. (eyecatcher=false above). If an eye catcher is present, the title is centered between eye-catcher and logo.
   % Title
   {\sf %Sans Serif
   %\bf% Serif
@@ -172,7 +172,7 @@
       \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=baposterBGone!80!black!#1!white,line width=0.03em] (0,0) circle(0.18em);}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Contribution}{name=contribution,column=0,row=0}{
+  \begin{posterbox}[name=contribution,column=0,row=0]{Contribution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    {}We introduce a method for expression invariant face recognition. A
    generative 3D Morphable Model (3DMM) is used to separate identity and
@@ -183,10 +183,10 @@
    It is applicable to any kind of input data, and was evaluated here on
    textureless range scans.
   \vspace{0.3em}
- }
+ \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Model}{name=model,column=0,below=contribution}{
+  \begin{posterbox}[name=model,column=0,below=contribution]{Model}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     The Model was learnt from 275 subjects. We used one neutral expression scan
     per identity and 150 expression scans of a subset of the subjects. 
@@ -207,10 +207,10 @@
     independent, such that each face is represented by a unique set of
     coefficients.  
   \vspace{0.3em}
-  }
+  \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Fitting}{name=fitting,column=0,below=model}{
+  \begin{posterbox}[name=fitting,column=0,below=model]{Fitting}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     A Robust Nonrigid ICP method was used to fit the model to the data.
     Robustness was achieved by iteratively reweighting the correspondences and
@@ -219,18 +219,18 @@
     Fitting was initialized by a simple nose detector and proceeded fully
     automatic.
   \vspace{0.3em}
-  }
+  \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Distance Measure}{name=measure,column=0,below=fitting}{
+  \begin{posterbox}[name=measure,column=0,below=fitting]{Distance Measure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    The Mahalanobis angle between the identity coefficients $\VEC{\alpha_{n}}$
    was used for classification.
   \vspace{0.3em}
-  }
+  \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Expression Neutralization}{name=results neutralization,column=1,row=0}{
+  \begin{posterbox}[name=results neutralization,column=1,row=0]{Expression Neutralization}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{tikzpicture}[x=0.3333\linewidth,y=-0.42\linewidth]
     \path [use as bounding box] (-0.5,-0.5) rectangle(2.5,1.7);
@@ -255,15 +255,15 @@
   prior knowledge from the face model. The pose and expression normalized faces
   (c) are used for face recognition.
   \vspace{0.5em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Funding}{name=funding,column=1,span=2,above=bottom}{
+  \begin{posterbox}[name=funding,column=1,span=2,above=bottom]{Funding}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \smaller 
   \hspace{1em}This work was supported in part by Microsoft Research through the European PhD Scholarship Programme.
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Results}{name=results,column=1,span=2,below=results neutralization,above=funding}{
+  \begin{posterbox}[name=results,column=1,span=2,below=results neutralization,above=funding]{Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       \begin{multicols}{2}
         The method was evaluated on the GavabDB expression dataset which
@@ -306,9 +306,9 @@
 %      \end{multicols}
   \\
   \vspace{0.5em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Robustness}{name=robustness,column=2,row=0,above=results,span=1}{
+  \begin{posterbox}[name=robustness,column=2,row=0,above=results,span=1]{Robustness}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{tikzpicture}[x=0.3333\linewidth,y=-0.42\linewidth]
     \path [use as bounding box] (-0.5,-0.5) rectangle(2.5,1.7);
@@ -331,10 +331,10 @@
   
   This is achieved by a robust iteratively reweighted ICP algorithm and outlier
   rejection based on angle comparisions between corresponding points.
-  }
+  \end{posterbox}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{References}{name=references,column=0,above=bottom}{
+  \begin{posterbox}[name=references,column=0,above=bottom]{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \smaller
     \vspace{-0.4em}
@@ -351,16 +351,16 @@
         \newblock Expression Invariant Face Recognition with a 3D Morphable Model
         \newblock In {\em Automated Face and Gesture Recognition 2008}
       \end{thebibliography}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Open Questions}{name=questions,column=0,span=1,below=measure,above=references}{
+  \begin{posterbox}[name=questions,column=0,span=1,below=measure,above=references]{Open Questions}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     While the expression and identity space are linearly independent, there is
     some expression left in the identity model. This is because a ``neutral''
     face is interpreted differently by the subjects.
 
     We investigate learning ``pure'' separated models from our the available ``impure'' data.
-  }
+  \end{posterbox}
 
 \end{poster}
 

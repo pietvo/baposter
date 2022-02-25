@@ -159,7 +159,7 @@
   \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=lightblue,line width=0.03em] (0,0) circle(0.18em);}}
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Problem}{name=problem,column=0,row=0}{
+  \begin{posterbox}[name=problem,column=0,row=0]{Problem}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     Given an image and a (2D or 3D) shape model, detect a large set of fiducials defined in the shape model.
 
@@ -176,11 +176,11 @@
     \item the search problem is too large, 
     \item and the cost surface too complex
     \end{itemize}
-  }
+  \end{posterbox}
  
 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
- \headerbox{}{name=results,column=1,span=2,row=0,textborder=none}{
+ \begin{posterbox}[name=results,column=1,span=2,row=0,textborder=none]{}
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    {
  \smaller\centering
@@ -217,9 +217,9 @@
  pose, and the detected landmark positions. The first two rows are success
  cases, the last row shows a failure case. 
        \end{multicols}
- }
+ \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{References}{name=references,column=0,above=bottom}{
+  \begin{posterbox}[name=references,column=0,above=bottom]{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \smaller
     \bibliographystyle{ieee}
@@ -232,9 +232,9 @@
         \newblock In {\em ICCV '11}
       \end{thebibliography}
    \vspace{0.3em}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Contributions}{name=contribution,column=0,below=problem,above=references}{
+\begin{posterbox}[name=contribution,column=0,below=problem,above=references]{Contributions}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   We integrate local detection and global shape fitting by
   \begin{itemize}
@@ -256,9 +256,9 @@
   \item combined with any local detector
   \item used for a wide range of shape models
   \end{itemize}
-}
+\end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Source Code}{name=source,column=3,above=bottom}{
+  \begin{posterbox}[name=source,column=3,above=bottom]{Source Code}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \noindent
   \begin{minipage}{\linewidth}
@@ -270,16 +270,16 @@
   \hfill\includegraphics[width=\linewidth]{chart}
   \end{minipage}
   \end{minipage}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Solution}{name=solution1,column=1,above=bottom}{
+  \begin{posterbox}[name=solution1,column=1,above=bottom]{Solution}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This mixed continuous/discrete problem is solved with Branch and Bound, by
 repeatedly splitting the set of solutions, and determining a lower bound on the
 cost of each subset.
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Formulation}{name=formulation,column=1,below=results,above=solution1}{
+  \begin{posterbox}[name=formulation,column=1,below=results,above=solution1]{Formulation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Given a shape model 
 \begin{align}
@@ -292,9 +292,9 @@ minimizing
   F(\Params, j_1, \dots, j_N) = \sum \rho\left( \normLR{ \VEC m_i(\Params) - \l_i^{j_i} } \right).
 \end{align}
 Here $\rho: \SRR\to\SRR$ is a robust cost function.
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Representation}{name=representation,column=2,above=bottom,below=results}{
+  \begin{posterbox}[name=representation,column=2,above=bottom,below=results]{Representation}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   A subset of solutions is described by $N$ convex polygons. A subset consists of all selections
   \begin{align}
@@ -307,27 +307,27 @@ Here $\rho: \SRR\to\SRR$ is a robust cost function.
   \begin{center}
     \includegraphics[width=\linewidth]{images/representation.pdf}
   \end{center}
-  }
+  \end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Splitting Strategy}{name=strategy,column=3,row=0}{
+\begin{posterbox}[name=strategy,column=3,row=0]{Splitting Strategy}
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   {\smaller\centering{Runtime as a function of the splitting strategy}\\[-0.5em]
     \includegraphics[width=0.82\linewidth]{images/typical_random_splitting_strategies.pdf}}\\
     Different splitting strategies result in vastly different performance.
       Note that  `split into equal sized problems' is one of the worst strategies for
       branch and bound.
-}
+\end{posterbox}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Scaling Behaviour}{name=scaling,column=3,below=strategy,above=source}{%
+\begin{posterbox}[name=scaling,column=3,below=strategy,above=source]{Scaling Behaviour}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \smaller%
   \centering{Runtime as a function of the number of false positives}\\[0em]%
   \centering{{\includegraphics[width=0.82\linewidth]{images/typical_random_no_noise-crop.pdf}}}\\[0em]%
   \centering{Runtime as a function of detection accuracy}\\[0em]%
   \centering{{\includegraphics[width=0.82\linewidth]{images/typical_random_add_noise-crop.pdf}}}\\[0em]%
-}
+\end{posterbox}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \headerbox{Solution}{name=solution,column=2,row=0,below=results,above=bottom}{
+% \begin{posterbox}[name=solution,column=2,row=0,below=results,above=bottom]{Solution}
 %   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %   This discrete optimization is solved by Branch and Bound, which is a method
 %   to minimize a function over a set. It requires us to (1) efficiently specify
@@ -370,7 +370,7 @@ Here $\rho: \SRR\to\SRR$ is a robust cost function.
 % % \end{align}
 %  \item We found that splitting landmark candidates such that the convex hull of the resulting two landmark candidates are as distant as possible is most effective.
 %  \end{enumerate}
-% }
+% \end{posterbox}
 
  \end{poster}
 \end{document}
