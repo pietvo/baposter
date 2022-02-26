@@ -15,6 +15,8 @@
 %% Copyright (C) 2022, by Pieter van Oostrum
 %%
 %%
+%% 26. February 2022: (Pieter van Oostrum)
+%%     - Remove wrong 'align=right' from the Title box tikz picture
 %% 24. February 2022: (Pieter van Oostrum)
 %%     - Added attributions to Mathias Loesch to comply with GPL
 %%     - Contributions by Pieter van Oostrum (marked PvO)
@@ -1100,7 +1102,7 @@
   \addtolength{\baposter@titleimage@textwidth}{-\baposter@titleimage@left@width}%
   \addtolength{\baposter@titleimage@textwidth}{-\baposter@titleimage@right@width}%
 %
-  \begin{tikzpicture}[inner sep=0pt,outer sep=0pt,line width=0.05em,align=right]%
+  \begin{tikzpicture}[inner sep=0pt,outer sep=0pt,line width=0.05em]%
     \useasboundingbox (0em,0em) rectangle(\textwidth,\textheight);%
     \path[shape=coordinate]%
       (0pt,\colheight) coordinate(north west) (\textwidth,\colheight) coordinate(north east)%
