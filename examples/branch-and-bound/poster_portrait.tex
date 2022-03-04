@@ -20,7 +20,7 @@
 %\usepackage{bookman}
 \usepackage{palatino}
 
-\newcommand{\captionfont}{\footnotesize}
+%\newcommand{\captionfont}{\footnotesize}
 
 \graphicspath{{images/}{../images/}}
 \usetikzlibrary{calc}
@@ -132,18 +132,18 @@
   headerfont=\Large\bf\textsc, %Sans Serif
   textfont={\setlength{\parindent}{1.5em}},
   boxshade=plain,
-%  background=shade-tb,
+%  background=shadetb,
   background=plain,
   linewidth=2pt
   }
   % Eye Catcher
   {\includegraphics[height=7em]{images/search_tree_ex1-crop.pdf}} 
   % Title
-  {\bf\textsc{Optimal Landmark Detection using Shape Models and Branch and Bound}\vspace{0.5em}}
+  {\setlength{\baselineskip}{2ex}\bf\textsc{Optimal Landmark Detection\\ using Shape Models and Branch and Bound}\vspace{0.2em}}
   % Authors
   {\textsc{\{ Brian.Amberg and Thomas.Vetter \}@unibas.ch}}
   % University logo
-  {% The makebox allows the title to flow into the logo, this is a hack because of the L shaped logo.
+  {
     \includegraphics[height=9.0em]{images/logo}
   }
 
