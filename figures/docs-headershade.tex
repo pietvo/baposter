@@ -1,0 +1,37 @@
+\documentclass[portrait,fontscale=1,margin=0.2cm,paperwidth=15truecm, paperheight=1.5cm,debug]{baposter}
+
+
+\begin{document}
+
+\begin{poster}{
+  headerheight=0pt,
+  columns=4,
+  background=none,
+  linewidth=1pt,
+  borderColor=green!60,
+  textborder=rectangle,
+  % headershade=plain,
+  headerColorOne=green!60,
+  headerColorTwo=yellow,
+  headershape=smallrounded,
+  headerfont={},
+  height=bottom,
+  boxColorOne=lightgray,
+}{}{}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{posterbox}[column=0,headerfont={},headershade=plain]{plain}
+\end{posterbox}
+
+\begin{posterbox}[column=1,headerfont={},headershade=shadelr]{shadelr}
+\end{posterbox}
+
+\begin{posterbox}[column=2,headerfont={},headershade=shadetb]{shadetb}
+\end{posterbox}
+
+\begin{posterbox}[column=3,headerfont={},headershade=shadetbinverse]{shadetbinverse}
+\end{posterbox}
+
+\end{poster}
+
+\end{document}
