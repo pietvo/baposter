@@ -1,0 +1,10 @@
+*.aux
+*.log
+*.synctex.gz
+auto
+*.fls
+*.fdb_latexmk
+*.dvi
+*.xdv
+*.out
+.DS_Store
