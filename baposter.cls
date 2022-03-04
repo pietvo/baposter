@@ -141,6 +141,8 @@
 \LoadClass{article}
 \typeout{baposter: Brian Amberg, 2007, 2008, 2009, 2010, 2011 | http://www.brian-amberg.de/uni/poster/}
 \typeout{baposter: Reinhold Kainhofer, 2011 | http://reinhold.kainhofer.com/}
+%% Contributions by Mathias Loesch, 2012,
+%% Contributions by Alan Munn, 2018,
 \typeout{baposter: Pieter van Oostrum, 2022 | https://github.com/pietvo/baposter}
 
 %% Define lengths only once on inclusion, such that we can make multiple posters
