@@ -15,6 +15,8 @@
 %% Copyright (C) 2022, by Pieter van Oostrum
 %%
 %%
+%% 28. February 2022: (Pieter van Oostrum)
+%%     - Add titlefont and authorfont options for posterbox
 %% 26. February 2022: (Pieter van Oostrum)
 %%     - Remove wrong 'align=right' from the Title box tikz picture
 %% 24. February 2022: (Pieter van Oostrum)
@@ -136,7 +138,7 @@
 %%
 %%
 %% Licence: GPL
-\ProvidesClass{baposter}[2022/02/24 v3.0 baposter class]
+\ProvidesClass{baposter}[2022/02/28 v3.0 baposter class]
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \LoadClass{article}
 \typeout{baposter: Brian Amberg, 2007, 2008, 2009, 2010, 2011 | http://www.brian-amberg.de/uni/poster/}
@@ -373,6 +375,10 @@
 \define@cmdkey [ba]{poster}[baposter@]{colspacing}           [1em]         {}
 \define@cmdkey [ba]{poster}[baposter@]{bgColorOne}           [baposter@silver]{}
 \define@cmdkey [ba]{poster}[baposter@]{bgColorTwo}           [green]       {}
+% PvO 2022/02/24 Set sensible \baselineskip in title and authors
+% PvO 2022/02/28 Add titlefont and authorfont options for posterbox
+\define@cmdkey [ba]{poster}[baposter@]{titlefont}            [\bfseries\Huge\setlength\baselineskip{2.2ex}] {}
+\define@cmdkey [ba]{poster}[baposter@]{authorfont}           [\Large\setlength\baselineskip{2.2ex}]         {}
 
 % background can be one of: shadelr, shadetb, plain, user, none
 \define@choicekey*+[ba]{poster}{background}%
@@ -510,6 +516,9 @@
   colspacing=1em,
   headerheight=0.1\textheight,
   background=shadelr,
+% PvO 2022/02/28 Add titlefont and authorfont options for posterbox
+  titlefont, % Use default value, see above
+  authorfont,% Use default value, see above
 }{}
 \setkeys[ba]{posterbox}{
   % Position
@@ -778,12 +787,6 @@
     \tikzstyle{header colors}=[]%
 }
 
-% PvO 2022/02/24
-% Typeset poster title - We smuggle in a \par with \endgraf, otherwise
-% TeX complains because \text@command is not \long
-% We need this to effectuate the \baselineskip setting
-\newcommand{\baposter@setpostertitle}[1]{\textbf{\Huge\baselineskip=2.2ex #1\endgraf}}
-\newcommand{\baposter@setposterauthor}[1]{{\Large\baselineskip=2.2ex #1\endgraf}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% The main poster environment
@@ -1121,18 +1124,22 @@
     \ifbaposter@eyecatcher% Has eye catcher%
       \draw (image.east) node(title)[anchor=west,text width=\baposter@titleimage@textwidth]{%
         \begin{minipage}{\baposter@titleimage@textwidth}%
-          % PvO 2022/02/24 Set sensible \baselineskip in title and authors
+% PvO 2022/02/24 Set sensible \baselineskip in title and authors
+% PvO 2022/02/28 Use titlefont and authorfont options
+% Typeset poster title - We smuggle in a \par with \endgraf, otherwise
+% TeX complains because \text@command is not \long
+% We need this to effectuate the \baselineskip setting
           \centering
-            \baposter@setpostertitle{#3}% PvO
-            \baposter@setposterauthor{#4}% PvO
+            \baposter@titlefont#3\endgraf% PvO
+            \baposter@authorfont#4\endgraf% PvO
         \end{minipage}%
       };%
     \else% Has no eye catcher
       \draw (image.east) node(title)[anchor=west]  {{%
           \begin{minipage}{\baposter@titleimage@textwidth}%
-          % PvO 2022/02/23 Set sensible \baselineskip in title and authors
-            \baposter@setpostertitle{#3}% PvO
-            \baposter@setposterauthor{#4}% PvO
+            % PvO 2022/02/28 Use titlefont and authorfont options
+            \baposter@titlefont#3\endgraf% PvO
+            \baposter@authorfont#4\endgraf% PvO
           \end{minipage}%
         }};%
     \fi
