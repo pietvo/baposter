@@ -764,7 +764,7 @@
       bottom color=#2!100!#1,%
       shading angle=20%
     ]%
-    \colorlet{baposterHeaderFontColor}{white}%
+    \colorlet{HeaderFontColor}{white}%
 }
 \newcommand{\baposter@box@headershade@plain}[3]{%
     \debug{Header-Shade: Plain}%
